@@ -16,14 +16,7 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#">SighIn</a></li>
-				<li><a href="#">Register</a></li>
+				<li><a href="http://127.0.0.1/3DprintShop/register">Register</a></li>
 			</ul>
 		</div>		
-	</nav>
-	<!-- <div>
-		<nav class="navbar-fixed-top"> 
-            <a class="btn" href="http://127.0.0.1/3DprintShop">Home</a>          
-            <a class="btn" href="http://127.0.0.1/3DprintShop/Register">Register</a>        
-    	</nav>
-	</div> -->
-	
+	</nav>	
