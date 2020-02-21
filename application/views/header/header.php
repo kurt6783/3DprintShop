@@ -15,7 +15,7 @@
 				<!-- <li><a href="http://127.0.0.1/3DprintShop/#">Register</a></li>				 -->
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Log in</a></li>
+				<li><a href="http://127.0.0.1/3DprintShop/competence">Log in</a></li>
 				<li><a href="http://127.0.0.1/3DprintShop/register">Register</a></li>
 			</ul>
 		</div>		
