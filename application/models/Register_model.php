@@ -41,8 +41,7 @@ class Register_model extends CI_Model{
 	}
 
 	public function get_verificationCodeByAccount(){
-		$data = array()
-		$data = array()
+		
 	}
 
 	public function check_isDataComplete(){
