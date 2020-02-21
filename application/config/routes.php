@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $route['register/create'] = 'register/create'; 
-$route['register'] = 'Register' ;
+$route['register'] = 'Register';
+
+$route['competence'] = 'Competence';
 
 $route['default_controller'] = 'Home';
 $route['404_override'] = '';
