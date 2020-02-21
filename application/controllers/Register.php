@@ -56,8 +56,7 @@ class Register extends CI_Controller{
 		}
 		$createUser = $this->Register_model->set_createUser();
 		if($createUser==true){
-			$data['result'] = 'Register success. Please check your phone to activate your account';
-			$data['url'] = 
+			$data['result'] = 'Register success';			
 			$this->load->view('header/header', $data);
 			$this->load->view('register/verification', $data);
 			$this->load->view('footer/footer');
