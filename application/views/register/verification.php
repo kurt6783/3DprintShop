@@ -1,4 +1,4 @@
 <div class="container">
-	<p><?php echo $result?></p>	
+	<p><?php echo $result?></p>		
 </div>
 
