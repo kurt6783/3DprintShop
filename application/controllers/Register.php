@@ -20,15 +20,15 @@ class Register extends CI_Controller{
 		try {
 			$isDataComplete = $this->Register_model->check_isDataComplete();
 			if($isDataComplete==false){
-				throw new Exception('data is not complete', 1);
+				throw new Exception('data is not complete');
 			}
 			$isUserExist = $this->Register_model->get_isUserExist();	
 			if($isUserExist==true){
-				throw new Exception('this account had been used', 1);
+				throw new Exception('this account had been used');
 			}
 			$isPasswordLegal = $this->Register_model->check_isPasswordLegal();
 			if($isPasswordLegal==false){
-				throw new Exception('your password is not legal', 1);
+				throw new Exception('your password is not legal');
 			}
 			$createUser = $this->Register_model->set_createUser();
 			if($createUser==true){
@@ -37,7 +37,7 @@ class Register extends CI_Controller{
 				$this->load->view('register/verification', $data);
 				$this->load->view('footer/footer');
 			}else{
-				throw new Exception('Register failed', 1);
+				throw new Exception('Register failed');
 			}		
 		} catch (Exception $e) {
 			$data['result'] = $e->getMessage();
