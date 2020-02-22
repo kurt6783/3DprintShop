@@ -17,6 +17,38 @@ class Register extends CI_Controller{
 
 	public function create(){	
 		$data['title'] = 'Register result';	
+		try {
+			$isDataComplete = $this->Register_model->check_isDataComplete();
+			if($isDataComplete==false){
+				throw new Exception('data is not complete', 1);
+			}
+			$isUserExist = $this->Register_model->get_isUserExist();	
+			if($isUserExist==true){
+				throw new Exception('this account had been used', 1);
+			}
+			$isPasswordLegal = $this->Register_model->check_isPasswordLegal();
+			if($isPasswordLegal==false){
+				throw new Exception('your password is not legal', 1);
+			}
+			$createUser = $this->Register_model->set_createUser();
+			if($createUser==true){
+				$data['result'] = 'Register success';			
+				$this->load->view('header/header', $data);
+				$this->load->view('register/verification', $data);
+				$this->load->view('footer/footer');
+			}else{
+				throw new Exception('Register failed', 1);
+			}		
+		} catch (Exception $e) {
+			$data['result'] = $e->getMessage();
+			$this->load->view('header/header', $data);			
+			$this->load->view('register/verification', $data);
+			$this->load->view('footer/footer');
+		}
+	}	
+
+	public function create_backup(){	
+		$data['title'] = 'Register result';	
 
 		//測試區
 		//$data['result'] = $this->Register_model->show_input();	

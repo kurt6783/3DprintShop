@@ -15,9 +15,19 @@
 				<!-- <li><a href="http://127.0.0.1/3DprintShop/#">Register</a></li>				 -->
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="http://127.0.0.1/3DprintShop/competence">Log in</a></li>
-				<li><a href="http://127.0.0.1/3DprintShop/register">Register</a></li>
+				<?php 
+					if($userName=='kurt'){ ?>
+						<li><a href="http://127.0.0.1/3DprintShop/competence">Log out</a></li>
+						<li><a href="http://127.0.0.1/3DprintShop/register">kurt</a></li>
+						
+					<?php }else{ ?>
+						<li><a href="http://127.0.0.1/3DprintShop/competence">Log in</a></li>
+						<li><a href="http://127.0.0.1/3DprintShop/register">Register</a></li>
+					<?php }
+				?>				
 			</ul>
+
+			
 		</div>		
 	</nav>	
 	<div class="container">
