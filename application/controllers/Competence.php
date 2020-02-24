@@ -16,10 +16,18 @@ class Competence extends CI_Controller{
 		$this->load->view('footer/footer');		
 	}
 
+	public function userData(){
+		$data['title'] = 'Your data';
+		$this->Competence_model->logOut();
+		$this->load->view('header/header', $data);
+		$this->load->view('competence/userData' ,$data);
+		$this->load->view('footer/footer');		
+	}
+
 	public function logOut(){
 		$data['title'] = 'LogOut';
 		$data['userName'] = '';
-		$this->Competence_model->set_logOut();
+		$this->Competence_model->logOut();
 		$this->load->view('header/header', $data);
 		$this->load->view('home/home');
 		$this->load->view('footer/footer');		
@@ -27,7 +35,7 @@ class Competence extends CI_Controller{
 
 	public function logIn(){
 		$this->load->helper('security');
-		$isLoginLegal = $this->Competence_model->check_isLoginLegal($this->input->post('account'),do_hash($this->input->post('password'),'MD5'));
+		$isLoginLegal = $this->Competence_model->isLoginLegal($this->input->post('account'),do_hash($this->input->post('password'),'MD5'));
 		if($isLoginLegal==false){
 			$data['title'] = 'Login failed';	
 			$data['userName'] = '';

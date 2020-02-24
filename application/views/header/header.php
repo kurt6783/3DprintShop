@@ -18,8 +18,7 @@
 				<?php 
 					if($userName=='kurt'){ ?>
 						<li><a href="http://127.0.0.1/3DprintShop/competence/logOut">Log out</a></li>
-						<li><a href="http://127.0.0.1/3DprintShop/register">kurt</a></li>
-						
+						<li><a href="http://127.0.0.1/3DprintShop/register">kurt</a></li>						
 					<?php }else{ ?>
 						<li><a href="http://127.0.0.1/3DprintShop/competence">Log in</a></li>
 						<li><a href="http://127.0.0.1/3DprintShop/register">Register</a></li>

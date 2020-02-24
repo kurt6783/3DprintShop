@@ -10,7 +10,7 @@ class Home extends CI_Controller{
 
 	public function index(){	
 		$data['title'] = 'Welcome to home page';
-		$data['userName'] = $this->Competence_model->get_userLogin();
+		$data['userName'] = $this->Competence_model->userLogin();
 		$this->load->view('header/header', $data);
 		$this->load->view('home/home');
 		$this->load->view('footer/footer');		

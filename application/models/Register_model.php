@@ -5,14 +5,9 @@ class Register_model extends CI_Model{
 		$this->load->database();
 		$this->load->helper('url');
 		$this->load->helper('date');
-	}
+	}	
 
-	public function show_input(){
-		$data = $this->input->post();
-		return $data;
-	}
-
-	public function set_createUser(){
+	public function createUser(){
 		$this->load->helper('security');
 		$this->load->helper('string');
 		$data = array(
@@ -30,7 +25,7 @@ class Register_model extends CI_Model{
 		return $this->db->insert('users',$data);
 	}
 
-	public function get_isUserExist(){
+	public function isUserExist(){
 		$data = array('account' => $this->input->post('account'));
 		$query = $this->db->get_where('users',$data)->result_array();
 		if(count($query)==0){
@@ -40,11 +35,11 @@ class Register_model extends CI_Model{
 		}
 	}
 
-	public function get_verificationCodeByAccount(){
+	public function verificationCodeByAccount(){
 		
 	}
 
-	public function check_isDataComplete(){
+	public function isDataComplete(){
 		$datas=$this->input->post();
 		foreach($datas as $data){
 			if(strlen($data)==0){
@@ -54,7 +49,7 @@ class Register_model extends CI_Model{
 		return true;
 	}
 
-	public function check_isPasswordLegal(){
+	public function isPasswordLegal(){
 		$password = $this->input->post('password');
 		$passwordConfirm = $this->input->post('passwordConfirm');
 		if($password==$passwordConfirm){

@@ -7,7 +7,7 @@ class Competence_model extends CI_Model{
 		$this->load->helper('cookie');
 	}
 
-	public function get_userLogin(){
+	public function userLogin(){
 		$userName = $this->input->cookie("userName");
 		if(strlen($userName) != 0 AND $this->input->cookie("loginStatus") =="success"){
 			return $userName;
@@ -16,12 +16,12 @@ class Competence_model extends CI_Model{
 		}
 	}
 
-	public function set_logOut(){
+	public function logOut(){
 		delete_cookie("userName");
 		delete_cookie("loginStatus");
 	}
 	
-	public function check_isLoginLegal($account='',$password=''){
+	public function isLoginLegal($account='',$password=''){
 		$data = array(
 			'account' => $account,
 			'password' => $password

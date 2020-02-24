@@ -14,25 +14,25 @@ class Register extends CI_Controller{
 		$this->load->view('header/header', $data);
 		$this->load->view('register/register');
 		$this->load->view('footer/footer');		
-	}	
+	}
 
 	public function create(){	
 		$data['title'] = 'Register result';	
 		$data['userName'] = '';
 		try {
-			$isDataComplete = $this->Register_model->check_isDataComplete();
+			$isDataComplete = $this->Register_model->isDataComplete();
 			if($isDataComplete==false){
 				throw new Exception('data is not complete');
 			}
-			$isUserExist = $this->Register_model->get_isUserExist();	
+			$isUserExist = $this->Register_model->isUserExist();	
 			if($isUserExist==true){
 				throw new Exception('this account had been used');
 			}
-			$isPasswordLegal = $this->Register_model->check_isPasswordLegal();
+			$isPasswordLegal = $this->Register_model->isPasswordLegal();
 			if($isPasswordLegal==false){
 				throw new Exception('your password is not legal');
 			}
-			$createUser = $this->Register_model->set_createUser();
+			$createUser = $this->Register_model->createUser();
 			if($createUser==true){
 				$data['result'] = 'Register success';			
 				$this->load->view('header/header', $data);
@@ -64,7 +64,7 @@ class Register extends CI_Controller{
 		// return ;
 		//測試區
 
-		$isDataComplete = $this->Register_model->check_isDataComplete();
+		$isDataComplete = $this->Register_model->isDataComplete();
 		if($isDataComplete==false){
 			$data['result'] = 'data is not complete';
 			$this->load->view('header/header', $data);			
@@ -72,7 +72,7 @@ class Register extends CI_Controller{
 			$this->load->view('footer/footer');
 			return;
 		}
-		$isUserExist = $this->Register_model->get_isUserExist();	
+		$isUserExist = $this->Register_model->isUserExist();	
 		if($isUserExist==true){
 			$data['result'] = 'this account had been used';
 			$this->load->view('header/header', $data);			
@@ -80,7 +80,7 @@ class Register extends CI_Controller{
 			$this->load->view('footer/footer');
 			return;
 		}
-		$isPasswordLegal = $this->Register_model->check_isPasswordLegal();
+		$isPasswordLegal = $this->Register_model->isPasswordLegal();
 		if($isPasswordLegal==false){
 			$data['result'] = 'your password is not legal';
 			$this->load->view('header/header', $data);			
@@ -88,7 +88,7 @@ class Register extends CI_Controller{
 			$this->load->view('footer/footer');
 			return;
 		}
-		$createUser = $this->Register_model->set_createUser();
+		$createUser = $this->Register_model->createUser();
 		if($createUser==true){
 			$data['result'] = 'Register success';			
 			$this->load->view('header/header', $data);
