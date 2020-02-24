@@ -25,14 +25,6 @@
 						<li><a href="http://127.0.0.1/3DprintShop/register">Register</a></li>
 					<?php }
 				?>				
-			</ul>
-
-			
+			</ul>			
 		</div>		
 	</nav>	
-	<div class="container">
-		<div class="page-header">
-			<h1><?php echo $title ?></h1>
-		</div>
-	</div>
-	
