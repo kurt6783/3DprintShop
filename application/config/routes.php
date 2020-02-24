@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['register/create'] = 'register/create'; 
 $route['register'] = 'Register';
 
+$route['competence/logOut'] = 'Competence/logOut';
 $route['competence'] = 'Competence';
 
 $route['default_controller'] = 'Home';

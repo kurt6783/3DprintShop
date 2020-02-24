@@ -10,6 +10,7 @@ class Register extends CI_Controller{
 	public function index(){	
 		$this->load->helper('form');
 		$data['title'] = 'Register';	
+		$data['userName'] = '';
 		$this->load->view('header/header', $data);
 		$this->load->view('register/register');
 		$this->load->view('footer/footer');		
@@ -17,6 +18,7 @@ class Register extends CI_Controller{
 
 	public function create(){	
 		$data['title'] = 'Register result';	
+		$data['userName'] = '';
 		try {
 			$isDataComplete = $this->Register_model->check_isDataComplete();
 			if($isDataComplete==false){
@@ -49,7 +51,7 @@ class Register extends CI_Controller{
 
 	public function create_backup(){	
 		$data['title'] = 'Register result';	
-
+		$data['userName'] = '';
 		//測試區
 		//$data['result'] = $this->Register_model->show_input();	
 		// $this->load->view('header/header', $data);			

@@ -9,18 +9,28 @@ class Competence extends CI_Controller{
     }
 
 	public function index(){	
-		$data['title'] = 'Login';	
-
+		$data['title'] = 'Login';
+		$data['userName'] = '';
 		$this->load->view('header/header', $data);
 		$this->load->view('competence/login');
 		$this->load->view('footer/footer');		
 	}
 
-	public function login(){
-		$this->load->helper('security');		
+	public function logOut(){
+		$data['title'] = 'LogOut';
+		$data['userName'] = '';
+		$this->Competence_model->set_logOut();
+		$this->load->view('header/header', $data);
+		$this->load->view('home/home');
+		$this->load->view('footer/footer');		
+	}
+
+	public function logIn(){
+		$this->load->helper('security');
 		$isLoginLegal = $this->Competence_model->check_isLoginLegal($this->input->post('account'),do_hash($this->input->post('password'),'MD5'));
 		if($isLoginLegal==false){
 			$data['title'] = 'Login failed';	
+			$data['userName'] = '';
 			$this->load->view('header/header', $data);
 			$this->load->view('competence/login');
 			$this->load->view('footer/footer');
