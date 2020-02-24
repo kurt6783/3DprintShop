@@ -17,7 +17,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<?php 
 					if($userName=='kurt'){ ?>
-						<li><a href="http://127.0.0.1/3DprintShop/competence">Log out</a></li>
+						<li><a href="http://127.0.0.1/3DprintShop/competence/logOut">Log out</a></li>
 						<li><a href="http://127.0.0.1/3DprintShop/register">kurt</a></li>
 						
 					<?php }else{ ?>
