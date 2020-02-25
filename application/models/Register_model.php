@@ -13,7 +13,7 @@ class Register_model extends CI_Model{
 		$data = array(
 			'name' => $this->input->post('name'),
 			'identityCard' => $this->input->post('identityCard'),
-			'email' => $this->input->post('email'),
+			'email' => ucfirst($this->input->post('email')),
 			'account' => $this->input->post('account'),
 			'password' => do_hash($this->input->post('password'),'MD5'),
 			'phoneNumber' => $this->input->post('phoneNumber'),
@@ -35,8 +35,9 @@ class Register_model extends CI_Model{
 		}
 	}
 
-	public function verificationCodeByAccount(){
-		
+	public function verificationCodeByPhone(){
+		// 123
+		// 456
 	}
 
 	public function isDataComplete(){

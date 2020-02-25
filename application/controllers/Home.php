@@ -2,17 +2,21 @@
 class Home extends CI_Controller{
 
 	public function __construct(){
-        parent::__construct(); 
-        $this->load->helper('cookie');
-        $this->load->helper('url');
-        $this->load->model('Competence_model');        
+        parent::__construct();        
     }
 
-	public function index(){	
-		$data['title'] = 'Welcome to home page';
-		$data['userName'] = $this->Competence_model->userLogin();
+	public function index(){
+		$this->load->model('Competence_model');	
+		$isCookieExist = $this->Competence_model->isCookieExist();
+		if($isCookieExist == true){			
+			$data['loginStatus'] = true;
+		}else{
+			$data['loginStatus'] = false;
+		}
+		$data['userData'] = $this->Competence_model->getUserDataByCookie();
+		$data['title'] = "Welcome to 3DprintShop.";
 		$this->load->view('header/header', $data);
-		$this->load->view('home/home');
+		$this->load->view('home/home', $data);
 		$this->load->view('footer/footer');		
 	}		
 }

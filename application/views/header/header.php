@@ -14,16 +14,14 @@
 			<ul class="nav navbar-nav">
 				<!-- <li><a href="http://127.0.0.1/3DprintShop/#">Register</a></li>				 -->
 			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<?php 
-					if($userName=='kurt'){ ?>
-						<li><a href="http://127.0.0.1/3DprintShop/competence/logOut">Log out</a></li>
-						<li><a href="http://127.0.0.1/3DprintShop/register">kurt</a></li>						
-					<?php }else{ ?>
-						<li><a href="http://127.0.0.1/3DprintShop/competence">Log in</a></li>
-						<li><a href="http://127.0.0.1/3DprintShop/register">Register</a></li>
-					<?php }
-				?>				
+			<ul class="nav navbar-nav navbar-right">				
+				<?php if($loginStatus){ ?>
+					<li><a href="http://127.0.0.1/3DprintShop/competence/logOut">Log Out</a></li>
+					<li><a href="http://127.0.0.1/3DprintShop/competence/user/<?php echo $userData['account']; ?>"><?php echo $userData['name']; ?></a></li>		
+				<?php }else{ ?>
+					<li><a href="http://127.0.0.1/3DprintShop/competence">Log in</a></li>
+					<li><a href="http://127.0.0.1/3DprintShop/register">Register</a></li>		
+				<?php } ?>
 			</ul>			
 		</div>		
 	</nav>	

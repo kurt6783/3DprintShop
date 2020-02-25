@@ -2,23 +2,23 @@
 class Register extends CI_Controller{
 
 	public function __construct(){
-        parent::__construct(); 
-        $this->load->model('Register_model');
-        $this->load->helper('url');
+        parent::__construct();           
     }
 
 	public function index(){	
 		$this->load->helper('form');
-		$data['title'] = 'Register';	
-		$data['userName'] = '';
+		$data['loginStatus'] = false;
+		$data['title'] = 'Register';		
 		$this->load->view('header/header', $data);
-		$this->load->view('register/register');
+		$this->load->view('register/register', $data);
 		$this->load->view('footer/footer');		
 	}
 
 	public function create(){	
+		$this->load->model('Register_model');
+		$this->load->helper('url');
 		$data['title'] = 'Register result';	
-		$data['userName'] = '';
+		$data['loginStatus'] = false;		
 		try {
 			$isDataComplete = $this->Register_model->isDataComplete();
 			if($isDataComplete==false){
@@ -30,75 +30,24 @@ class Register extends CI_Controller{
 			}
 			$isPasswordLegal = $this->Register_model->isPasswordLegal();
 			if($isPasswordLegal==false){
-				throw new Exception('your password is not legal');
+				throw new Exception('your password is not identical');
 			}
 			$createUser = $this->Register_model->createUser();
 			if($createUser==true){
-				$data['result'] = 'Register success';			
+				$data['title'] = 'Register success';
+				$data['result'] = 'Welcome to join us';			
 				$this->load->view('header/header', $data);
-				$this->load->view('register/verification', $data);
+				$this->load->view('register/result', $data);
 				$this->load->view('footer/footer');
 			}else{
 				throw new Exception('Register failed');
 			}		
 		} catch (Exception $e) {
+			$data['title'] = "Register failed";
 			$data['result'] = $e->getMessage();
 			$this->load->view('header/header', $data);			
-			$this->load->view('register/verification', $data);
+			$this->load->view('register/result', $data);
 			$this->load->view('footer/footer');
 		}
-	}	
-
-	public function create_backup(){	
-		$data['title'] = 'Register result';	
-		$data['userName'] = '';
-		//測試區
-		//$data['result'] = $this->Register_model->show_input();	
-		// $this->load->view('header/header', $data);			
-		// //$this->load->view('register/show', $data);
-		// //$this->load->view('footer/footer');
-		// $this->load->helper('date');
-		// // echo unix_to_human(time());
-		// echo unix_to_human(now('Asia/Taipei'),true,'us');
-		// echo unix_to_human(now('Asia/Taipei'),true,'eu');
-		// return ;
-		//測試區
-
-		$isDataComplete = $this->Register_model->isDataComplete();
-		if($isDataComplete==false){
-			$data['result'] = 'data is not complete';
-			$this->load->view('header/header', $data);			
-			$this->load->view('register/verification', $data);
-			$this->load->view('footer/footer');
-			return;
-		}
-		$isUserExist = $this->Register_model->isUserExist();	
-		if($isUserExist==true){
-			$data['result'] = 'this account had been used';
-			$this->load->view('header/header', $data);			
-			$this->load->view('register/verification', $data);
-			$this->load->view('footer/footer');
-			return;
-		}
-		$isPasswordLegal = $this->Register_model->isPasswordLegal();
-		if($isPasswordLegal==false){
-			$data['result'] = 'your password is not legal';
-			$this->load->view('header/header', $data);			
-			$this->load->view('register/verification', $data);
-			$this->load->view('footer/footer');
-			return;
-		}
-		$createUser = $this->Register_model->createUser();
-		if($createUser==true){
-			$data['result'] = 'Register success';			
-			$this->load->view('header/header', $data);
-			$this->load->view('register/verification', $data);
-			$this->load->view('footer/footer');
-		}else{
-			$data['result'] = 'Register failed';
-			$this->load->view('header/header', $data);
-			$this->load->view('register/verification', $data);
-			$this->load->view('footer/footer');
-		}		
-	}	
+	}
 }

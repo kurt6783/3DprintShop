@@ -5,8 +5,7 @@
 </div>
 <div class="container">
 	<div class="form-group">
-		<ul>
-			
-		</ul>
+		<p><?php echo $result?></p>		
 	</div>
 </div>
+
