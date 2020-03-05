@@ -39,13 +39,13 @@ class Competence_model extends CI_Model{
 			$this->input->set_cookie($cookie);
 			$cookie = array(
 				'name' => 'name',
-				'value' => 'kurt',
+				'value' => $query[0]['name'],
 				'expire' => 86400
 			);
 			$this->input->set_cookie($cookie);
 			$cookie = array(
 				'name' => 'account',
-				'value' => 'admin2',
+				'value' => $query[0]['account'],
 				'expire' => 86400
 			);
 			$this->input->set_cookie($cookie);			

@@ -11,17 +11,19 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="http://127.0.0.1/3DprintShop">Home</a>
 			</div>
-			<ul class="nav navbar-nav">
-				<!-- <li><a href="http://127.0.0.1/3DprintShop/#">Register</a></li>				 -->
-			</ul>
+			
+			<ul class="nav navbar-nav navbar-default">
+				<li class="nav-item active"><a href="http://127.0.0.1/3DprintShop/board">Board</a></li>
+			</ul>	
+
 			<ul class="nav navbar-nav navbar-right">				
 				<?php if($loginStatus){ ?>
 					<li><a href="http://127.0.0.1/3DprintShop/competence/logOut">Log Out</a></li>
-					<li><a href="http://127.0.0.1/3DprintShop/competence/user/<?php echo $userData['account']; ?>"><?php echo $userData['name']; ?></a></li>		
+					<li><a href="http://127.0.0.1/3DprintShop/competence/user/<?php echo $userData['account']; ?>"><?php echo $userData['name'] ?></a></li>
 				<?php }else{ ?>
 					<li><a href="http://127.0.0.1/3DprintShop/competence">Log in</a></li>
 					<li><a href="http://127.0.0.1/3DprintShop/register">Register</a></li>		
 				<?php } ?>
-			</ul>			
+			</ul>	
 		</div>		
 	</nav>	
