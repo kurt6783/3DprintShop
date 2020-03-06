@@ -11,9 +11,10 @@ class Board extends CI_Controller{
     }
 
     public function index(){
-		$data['loginStatus'] = false;
+		$data['loginStatus'] = true;
     	$data['title'] = "messageBoard";
     	$data['result'] = "";
+        $data['userData'] = $this->Competence_model->getUserDataByCookie();
         $data['messages'] = $this->Message_model->getMessage();
     	$this->load->view('header/header', $data);
 		$this->load->view('board/board', $data);
@@ -21,11 +22,13 @@ class Board extends CI_Controller{
     }
 
     public function addMSG(){
-
-
-        $data['loginStatus'] = false;
+        $loginStatus = $this->Competence_model->isCookieExist();
+        $user = $this->Competence_model->getUserDataByCookie();
+        $this->Message_model->setMessage($user);
+        $data['loginStatus'] = true;
         $data['title'] = "messageBoard";
         $data['result'] = "";
+        $data['userData'] = $this->Competence_model->getUserDataByCookie();
         $data['messages'] = $this->Message_model->getMessage();
         $this->load->view('header/header',$data);
         $this->load->view('board/board',$data);
