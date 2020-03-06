@@ -19,7 +19,20 @@
 		<h1><?php echo $title ?></h1>
 	</div>
 </div>
-<?php echo form_open('Board/addMSG') ?>
+
+<div class="container">
+	<!-- <?php var_dump($messages); ?> -->
+	<?php foreach ($messages as $message){ ?>
+		<div class="form-group">
+			<label><?php echo $message['id'] . " "; ?></label>
+			<label><?php echo $message['name'] . " "; ?></label>
+			<label><?php echo $message['content'] . " "; ?></label>
+			<label><?php echo $message['datetime']; ?></label>
+		</div>		
+	<?php } ?>
+</div>
+
+<?php echo form_open('board/addMSG') ?>
 <div class="container">
 	<div class="form-group">
 		<label for="content">message:</label>
