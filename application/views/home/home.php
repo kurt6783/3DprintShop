@@ -22,6 +22,7 @@
 		});
 	});
 </script>
+
 <script >
 	setInterval(function(){
 		$.ajax({url:"AJAX/test",
