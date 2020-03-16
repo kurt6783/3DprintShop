@@ -4,6 +4,7 @@
 	<title>3DprintShop</title>
 	<link rel="icon" type="image/x-icon" href="https://s2.coinmarketcap.com/static/img/coins/200x200/2099.png?_=cb31027">		
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>		
 	<nav class="navbar navbar-default">

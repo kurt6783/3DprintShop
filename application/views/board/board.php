@@ -13,15 +13,13 @@
 // curl_exec($api);
 // curl_close($api);
 ?>
-
 <div class="container">
 	<div class="page-header">
 		<h1><?php echo $title ?></h1>
 	</div>
 </div>
 
-<div class="container">
-	<!-- <?php var_dump($messages); ?> -->
+<div class="container">	
 	<?php foreach ($messages as $message){ ?>
 		<div class="form-group">
 			<label><?php echo $message['id'] . " "; ?></label>
@@ -36,7 +34,7 @@
 <div class="container">
 	<div class="form-group">
 		<label for="content">message:</label>
-		<input type="message" name="message" placeholder="message">
+		<input class="form-control" type="message" name="message" placeholder="message">
 	</div>
 	<button type="submit" class="btn btn-primary">Submit</button>	
 </div>
