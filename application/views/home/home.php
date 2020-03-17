@@ -11,9 +11,12 @@
 	</div>
 </div>
 
-<div>
-<div id="div1"><h2>使用 jQuery AJAX 修改文本内容</h2></div>
-<button id = "submit">Submit</button>
+
+<div >
+	<h2 id="div1">使用 jQuery AJAX 修改文本内容</h2>
+	<button id = "submit">Submit</button>
+</div >
+
 <script>	
 	$("#submit").click(function(){
 		$.ajax({url:"AJAX/test",
