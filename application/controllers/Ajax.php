@@ -16,4 +16,6 @@ class AJAX extends CI_Controller {
 		echo $a;
 	}
 }
+
+
 ?>
