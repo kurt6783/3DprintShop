@@ -19,4 +19,9 @@ class Home extends CI_Controller{
 		$this->load->view('home/home', $data);
 		$this->load->view('footer/footer');		
 	}
+
+	public function picture(){
+		$this->load->model('Imgur_model');
+		$this->Imgur_model->postImage();
+	}
 }

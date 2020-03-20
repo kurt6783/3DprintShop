@@ -7,7 +7,7 @@
 <div class="container">
 	<div class="page-header">
 		<h1>picture practice</h1>
-		<form action="Imgur/getImages" method="POST" enctype="multipart/form-data">
+		<form action="Home/picture" method="POST" enctype="multipart/form-data">
 			<div class="form-group">				
 				<input type="file" name="pictureURL">
 			</div>

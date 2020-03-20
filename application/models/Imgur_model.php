@@ -116,6 +116,8 @@ class Imgur_model extends CI_Model {
 		$image = $_FILES["pictureURL"]['tmp_name'] ;
 		$imageHandle = fopen($image, "r");
 		$image = base64_encode(fread($imageHandle, filesize($image)));
+		$title = $_POST['pictureName'];
+		$description = $_POST['pictureDescription'];
 		curl_setopt_array($curl, array(
 			CURLOPT_URL => "https://api.imgur.com/3/image",
 			CURLOPT_RETURNTRANSFER => true,
@@ -127,8 +129,8 @@ class Imgur_model extends CI_Model {
 			CURLOPT_CUSTOMREQUEST => "POST",
 			CURLOPT_POSTFIELDS => array(
 				"image" => $image,
-				"title" => 'testimage',
-				"description" => "test",
+				"title" => $title,
+				"description" => $description,
 			),
 			CURLOPT_HTTPHEADER => array(
 		    	"Authorization: Bearer 43083ef3aaa8405714f433b55e75d09ed4b51cc9"
