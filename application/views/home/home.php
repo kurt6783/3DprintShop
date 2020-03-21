@@ -12,11 +12,11 @@
 				<input type="file" name="pictureURL">
 			</div>
 			<div class="form-group">
-				<label for="pictureName">picture name</label>
+				<label for="pictureName">picture name : </label>
 				<input type="text" name="pictureName">
 			</div>
 			<div class="form-group">
-				<label for="pictureDescription">picture description</label>
+				<label for="pictureDescription">picture description : </label>
 				<input type="text" name="pictureDescription">
 			</div>
 			<div class="form-group">

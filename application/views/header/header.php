@@ -14,7 +14,7 @@
 			</div>
 			
 			<ul class="nav navbar-nav navbar-default">
-				<li class="nav-item active"><a href="/3DprintShop/board">Board</a></li>
+				<li class="nav-item"><a href="/3DprintShop/board">Board</a></li>
 			</ul>	
 
 			<ul class="nav navbar-nav navbar-right">				
