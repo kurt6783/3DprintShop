@@ -27,6 +27,16 @@
 </div>
 
 <div class="container">
+	<div class="page-header">		
+		<?php foreach (json_decode($pictures,true)['data'] as $picture ) { ?>
+				<img src="<?php echo $picture['link'] ?>" width="30%" height="30%">
+		<?php }?>
+		<!-- <img src="<?php echo (json_decode($pictures, true)['data'][0]['link']);?>" width="30%" height="30%"> -->
+	</div>
+	
+</div>
+
+<div class="container">
 	<div class="page-header">
 		<h1>AJAX practice</h1>
 		<h2 id="div1">AJAX</h2>
