@@ -11,7 +11,13 @@ class Board extends CI_Controller{
     }
 
     public function index(){
-		$data['loginStatus'] = true;
+        $isCookieExist = $this->Competence_model->isCookieExist();
+        if($isCookieExist == true){         
+            $data['loginStatus'] = true;
+        }else{
+            $data['loginStatus'] = false;
+        }
+		// $data['loginStatus'] = true;
     	$data['title'] = "messageBoard";
     	$data['result'] = "";
         $data['userData'] = $this->Competence_model->getUserDataByCookie();
