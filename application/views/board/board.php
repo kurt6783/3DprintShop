@@ -16,15 +16,16 @@
 <div class="container">
 	<div class="page-header">
 		<h1><?php echo $title ?></h1>
+		<p><?php echo $paragraph ?></p>
 	</div>
 </div>
 
 <div class="container">	
 	<?php foreach ($messages as $message){ ?>
 		<div class="form-group">
-			<label><?php echo $message['id'] . " "; ?></label>
-			<label><?php echo $message['name'] . " "; ?></label>
-			<label><?php echo $message['content'] . " "; ?></label>
+			<label><?php echo $message['id'] . " . "; ?></label>
+			<label><?php echo $message['name'] . " : "; ?></label>
+			<label><?php echo $message['content'] . " 。 "; ?></label>
 			<label><?php echo $message['datetime']; ?></label>
 		</div>		
 	<?php } ?>

@@ -19,6 +19,7 @@ class Board extends CI_Controller{
         }
 		// $data['loginStatus'] = true;
     	$data['title'] = "messageBoard";
+        $data['paragraph'] = "";
     	$data['result'] = "";
         $data['userData'] = $this->Competence_model->getUserDataByCookie();
         $data['messages'] = $this->Message_model->getMessage();
@@ -29,15 +30,29 @@ class Board extends CI_Controller{
 
     public function addMSG(){
         $loginStatus = $this->Competence_model->isCookieExist();
-        $user = $this->Competence_model->getUserDataByCookie();
-        $this->Message_model->setMessage($user);
-        $data['loginStatus'] = true;
-        $data['title'] = "messageBoard";
-        $data['result'] = "";
-        $data['userData'] = $this->Competence_model->getUserDataByCookie();
-        $data['messages'] = $this->Message_model->getMessage();
-        $this->load->view('header/header',$data);
-        $this->load->view('board/board',$data);
-        $this->load->view('footer/footer');        
+        if($loginStatus == false){ 
+            $data['loginStatus'] = $loginStatus;
+            $data['title'] = "messageBoard";
+            $data['paragraph'] = "請先登入";
+            $data['result'] = "";
+            $data['userData'] = $this->Competence_model->getUserDataByCookie();
+            $data['messages'] = $this->Message_model->getMessage();
+            $this->load->view('header/header',$data);
+            $this->load->view('board/board',$data);
+            $this->load->view('footer/footer');        
+        }else{
+            $user = $this->Competence_model->getUserDataByCookie();
+            $this->Message_model->setMessage($user);
+            $data['loginStatus'] = $loginStatus;
+            $data['title'] = "messageBoard";
+            $data['paragraph'] = "成功";
+            $data['result'] = "";
+            $data['userData'] = $this->Competence_model->getUserDataByCookie();
+            $data['messages'] = $this->Message_model->getMessage();
+            $this->load->view('header/header',$data);
+            $this->load->view('board/board',$data);
+            $this->load->view('footer/footer');        
+        }           
     }  
 }
+?>
