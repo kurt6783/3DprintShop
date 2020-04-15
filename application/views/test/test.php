@@ -5,6 +5,11 @@
 </div>
 
 <div class="container">
+	<div class= "page-header">
+		<p>爬蟲練習</p>
+		<?php var_dump($bug); ?>
+	</div>
+
 	<div class="page-header">
 		<h1>picture practice</h1>
 		<p>串接imgur圖床API完成上傳圖片功能</p>

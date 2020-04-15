@@ -8,6 +8,11 @@ class Home extends CI_Controller{
 	public function index(){
 		$this->load->model('Competence_model');	
 		$this->load->model('Imgur_model');
+		
+		
+		
+		echo $_SERVER['REMOTE_ADDR'];
+
 		$isCookieExist = $this->Competence_model->isCookieExist();
 		if($isCookieExist == true){			
 			$data['loginStatus'] = true;
