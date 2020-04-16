@@ -47,6 +47,7 @@ class Competence extends CI_Controller{
 		$data['userData'] = $this->Competence_model->getUserDataByCookie();
 		$data['title'] = "Welcome to 3DprintShop.";
 		$data['pictures'] = $this->Imgur_model->getImages();
+		$data['userIP']	 = 	$_SERVER['REMOTE_ADDR'];
 		$this->load->view('header/header', $data);
 		$this->load->view('home/home', $data);
 		$this->load->view('footer/footer');		
