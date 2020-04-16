@@ -8,7 +8,7 @@
 		<p><?php echo $result ?></p>
 	</div>
 </div>
-<?php echo form_open('competence/login') ?>
+<?php echo form_open('/competence/login') ?>
 <div class="container">
 	<div class="form-group">
 		<label for="account">Account</label>
