@@ -2,6 +2,7 @@
 	<div class="page-header">
 		<h1><?php echo $title ?></h1>
 		<ul>
+			<li><?php echo 'Hi， '.$userIP. ' 你好。' ?></li>
 			<li>目前技術:</li>
 			<li>Bootstrap</li>
 			<li>CI框架</li>
