@@ -15,7 +15,9 @@
 			
 			<ul class="nav navbar-nav navbar-default">
 				<li class="nav-item"><a href="/3DprintShop/board">Board</a></li>
-				<li class="nav-item"><a href="/3DprintShop/test">Test</a></li>
+				<li class="nav-item"><a href="/3DprintShop/webCrawler">webCrawler</a></li>
+				<li class="nav-item"><a href="/3DprintShop/imgurAPI">imgurAPI</a></li>
+				<li class="nav-item"><a href="/3DprintShop/test">Test</a></li>		
 			</ul>	
 
 			<ul class="nav navbar-nav navbar-right">				

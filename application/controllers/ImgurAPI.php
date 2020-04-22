@@ -1,5 +1,5 @@
 <?php
-class Test extends CI_Controller {
+class ImgurAPI extends CI_Controller {
 
 	public function __construct(){
         parent::__construct();        
@@ -15,12 +15,10 @@ class Test extends CI_Controller {
 			$data['loginStatus'] = false;
 		}
 		$data['userData'] = $this->Competence_model->getUserDataByCookie();
-		$data['title'] = "這個頁面是用來測試功能用的";
-		$data['pictures'] = $this->Imgur_model->getImages();	
-		$data['bug'] = $this->Imgur_model->test();	
-
+		$data['title'] = "ImgurAPI串接，歡迎上傳圖片";
+		$data['pictures'] = $this->Imgur_model->getImages();
 		$this->load->view('header/header', $data);
-		$this->load->view('test/test', $data);
+		$this->load->view('imgurAPI/imgurAPI', $data);
 		$this->load->view('footer/footer');		
 	}
 }
